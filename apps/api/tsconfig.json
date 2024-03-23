@@ -1,0 +1,47 @@
+{
+  "extends": "@project/config-typescript/tsconfig.json",
+  "ts-node": {
+    "files": true,
+    "require": [
+      "tsconfig-paths/register"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "baseUrl": "./src",
+    "paths": {
+      "~/*": [
+        "*"
+      ]
+    }
+  },
+  "references": [
+    {
+      "path": "../../config/typescript"
+    },
+    {
+      "path": "../../libs/result"
+    },
+    {
+      "path": "../../libs/errors"
+    },
+    {
+      "path": "../../libs/schema-validation"
+    },
+    {
+      "path": "../../libs/types"
+    },
+    {
+      "path": "../../libs/aggregates"
+    }
+  ]
+}

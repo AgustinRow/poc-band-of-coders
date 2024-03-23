@@ -1,0 +1,17 @@
+{
+  "extends": "@project/config-typescript/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist"
+  },
+  "references": [
+    {
+      "path": "../errors"
+    },
+    {
+      "path": "../result"
+    },
+    {
+      "path": "../schema-validation"
+    }
+  ]
+}

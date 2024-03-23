@@ -1,0 +1,25 @@
+{
+  "name": "monorepo",
+  "packageManager": "yarn@3.3.0",
+  "scripts": {
+    "turbo": "turbo --no-daemon"
+  },
+  "workspaces": [
+    "apps/*",
+    "config/*",
+    "libs/*",
+    "domain/*"
+  ],
+  "dependencies": {
+    "typescript": "^4.9.4"
+  },
+  "engines": {
+    "node": "~18.12.1"
+  },
+  "devDependencies": {
+    "turbo": "^1.6.3"
+  },
+  "volta": {
+    "node": "18.12.1"
+  }
+}
