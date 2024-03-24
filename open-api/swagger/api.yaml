@@ -1,0 +1,71 @@
+openapi: 3.0.0
+servers:
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/AgustinRow/POC-for-Get-A-Head/1.0.0
+info:
+  version: "1.0.0"
+  title: home-iot-api
+  description: The API for the EatBacon IOT project
+paths:
+  /authentication/single-use-code:
+    post:
+      tags:
+        - Authentication
+      description: returns a single use code
+      parameters:
+        - in: query
+          name: apiKey
+          description: secret to comunicate with server
+          schema:
+            type: integer
+            format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                complex:
+                  type: string
+                  description: name of the property complex to access resources
+      responses:
+        "200":
+          description: single use code
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  singleUseCode:
+                    type: string
+                    description: a single use code for authentication puropose
+
+  /authentication/token:
+    post:
+      tags:
+        - Authentication
+      description: returns a set of tokens that could be used later for access resources
+      responses:
+        "200":
+          description: Operation executed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accessToken:
+                    type: string
+                    description: Access token
+                  refreshToken:
+                    type: string
+                    description: Refresh token
+
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                singleUseCode:
+                  type: string
+                  description: Description of the complex property
