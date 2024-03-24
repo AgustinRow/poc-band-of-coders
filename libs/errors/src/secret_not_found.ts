@@ -6,6 +6,6 @@ enum SecretErrorCodes {
 
 export default class SecretNotFoundError extends BaseError<SecretErrorCodes> {
   constructor (message: string, originalError?: Error | unknown) {
-    super(SecretErrorCodes.SECRET_NOT_FOUND, message, originalError)
+    super(SecretErrorCodes.SECRET_NOT_FOUND, message, originalError, 401)
   }
 }

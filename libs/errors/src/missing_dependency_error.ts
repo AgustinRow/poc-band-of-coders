@@ -6,6 +6,6 @@ enum MissingDependencyErrorCodes {
 
 export default class MissingDependencyError extends BaseError<MissingDependencyErrorCodes> {
   constructor (message: string, originalError?: Error) {
-    super(MissingDependencyErrorCodes.MISSING, message, originalError)
+    super(MissingDependencyErrorCodes.MISSING, message, originalError, 424)
   }
 }

@@ -6,6 +6,6 @@ enum UnknownErrorCodes {
 
 export default class UnknownError extends BaseError<UnknownErrorCodes> {
   constructor (message: string, originalError?: Error | unknown) {
-    super(UnknownErrorCodes.UNKNOWN_ERROR, message, originalError)
+    super(UnknownErrorCodes.UNKNOWN_ERROR, message, originalError, 500)
   }
 }

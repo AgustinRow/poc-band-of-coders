@@ -1,8 +1,12 @@
 {
   "extends": "@project/config-typescript/tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "target": "ES2022"
   },
+  "include": [
+    "src/**/*.ts"
+  ],
   "references": [
     {
       "path": "../result"

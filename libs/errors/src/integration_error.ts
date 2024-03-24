@@ -5,4 +5,7 @@ export enum IntegrationErrorCodes {
 }
 
 export default class IntegrationError extends BaseError<IntegrationErrorCodes> {
+  constructor (message: string, originalError?: Error | unknown) {
+    super(IntegrationErrorCodes.INTEGRATION_EVENT_MEDIATOR_NOT_FOUND, message, originalError, 404)
+  }
 }

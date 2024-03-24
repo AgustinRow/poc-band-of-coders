@@ -1,15 +1,19 @@
 import { isString } from 'lodash-es'
 
 enum GenericReason {
-  UNKNOWN = 'UNKNOWN',
+  UNKNOWN = 'UNKNOWN'
 }
 
 export default class BaseError<Reason = GenericReason> extends Error {
+  public get httpStatusCode (): number | undefined {
+    return this._httpStatusCode
+  }
+
   constructor (
     public readonly reason: Reason,
     messageOrOriginalError?: string | any,
     public readonly originalError?: any,
-    public readonly httpStatusCode?: number
+    private readonly _httpStatusCode?: number
   ) {
     super(isString(messageOrOriginalError) ? messageOrOriginalError : undefined)
 
@@ -18,7 +22,8 @@ export default class BaseError<Reason = GenericReason> extends Error {
         ...messageOrOriginalError,
         message: messageOrOriginalError.message,
         stack: messageOrOriginalError.stack,
-        stacktrace: messageOrOriginalError.stacktrace
+        stacktrace: messageOrOriginalError.stacktrace,
+        httpStatusCode: 500
       }
     }
   }

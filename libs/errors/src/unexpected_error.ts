@@ -6,6 +6,6 @@ export enum UnexpectedErrorCodes {
 
 export default class UnexpectedError extends BaseError<UnexpectedErrorCodes> {
   constructor (message: string, originalError?: Error | unknown) {
-    super(UnexpectedErrorCodes.UNEXPECTED_ERROR, message, originalError)
+    super(UnexpectedErrorCodes.UNEXPECTED_ERROR, message, originalError, 500)
   }
 }

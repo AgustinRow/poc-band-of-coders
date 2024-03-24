@@ -8,19 +8,19 @@
   },
   "include": [
     "src/**/*.ts",
-    "src/*"
+    "src/books_service/3rd_party/ingram_api",
   ],
   "exclude": [
-    "node_modules"
+    "./src/_migrator/*.js"
   ],
   "compilerOptions": {
     "experimentalDecorators": true,
     "outDir": "./dist",
-    "rootDir": "./src",
-    "baseUrl": "./src",
+    "rootDir": "./",
+    "baseUrl": "./",
     "paths": {
       "~/*": [
-        "*"
+        "./src/*"
       ]
     }
   },
@@ -29,10 +29,10 @@
       "path": "../../config/typescript"
     },
     {
-      "path": "../../libs/result"
+      "path": "../../libs/errors"
     },
     {
-      "path": "../../libs/errors"
+      "path": "../../libs/result"
     },
     {
       "path": "../../libs/schema-validation"

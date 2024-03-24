@@ -4,10 +4,7 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "target": "ES2022",
-    "lib": [
-      "ES2022",
-      "DOM"
-    ],
+    "lib": ["ES2022"],
     "incremental": true,
     "composite": true,
     "allowJs": false,
@@ -26,5 +23,8 @@
     "noImplicitOverride": true,
     "skipLibCheck": true,
     "resolveJsonModule": true
-  }
+  },
+  "exclude": [
+    "**/_migrator/*.js"
+  ]
 }

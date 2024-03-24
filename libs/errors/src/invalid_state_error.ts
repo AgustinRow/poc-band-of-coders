@@ -6,6 +6,6 @@ enum InvalidStateErrorCodes {
 
 export default class InvalidStateError extends BaseError<InvalidStateErrorCodes> {
   constructor (message: string, originalError?: Error | unknown) {
-    super(InvalidStateErrorCodes.INVALID_STATE_ERROR, message, originalError)
+    super(InvalidStateErrorCodes.INVALID_STATE_ERROR, message, originalError, 409)
   }
 }

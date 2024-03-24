@@ -10,5 +10,8 @@
     {
       "path": "../result"
     }
+  ],
+  "include": [
+    "src/**/*.ts"
   ]
 }

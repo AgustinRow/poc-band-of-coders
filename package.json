@@ -2,7 +2,19 @@
   "name": "monorepo",
   "packageManager": "yarn@3.3.0",
   "scripts": {
-    "turbo": "turbo --no-daemon"
+    "dev": "yarn _turbo dev --filter=api --filter=web --filter=docker-local",
+    "build-shared": "yarn _turbo build --filter=api^... --filter=web^...",
+    "build-shared-api": "yarn _turbo build --filter=api^...",
+    "build-shared-web": "yarn _turbo build --filter=web^...",
+    "build-api": "yarn _turbo build --filter=api^... --filter=api",
+    "build-web": "yarn _turbo build --filter=web^... --filter=web",
+    "type-check": "yarn _turbo type-check",
+    "type-check-api": "yarn _turbo type-check --filter=api^... --filter=api",
+    "type-check-web": "yarn _turbo type-check --filter=web^... --filter=web",
+    "lint-api": "yarn _turbo lint --filter=api^... --filter=api",
+    "lint-web": "yarn _turbo lint --filter=web^... --filter=web",
+    "full-check": "yarn lint && yarn type-check",
+    "_turbo": "turbo --no-daemon"
   },
   "workspaces": [
     "apps/*",
@@ -17,6 +29,7 @@
     "node": "~18.12.1"
   },
   "devDependencies": {
+    "rimraf": "^5.0.5",
     "turbo": "^1.6.3"
   },
   "volta": {

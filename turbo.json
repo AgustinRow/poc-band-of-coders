@@ -12,15 +12,30 @@
     },
     "lint:fix": {},
     "test": {},
-    "dev": { 
-       "cache": true,
-    "dependsOn": ["^build"],
-    "persistent": true
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["^build"]
     },
+    "start": {},
     "type-check": {
       "cache": true,
       "dependsOn": ["^build"]
     },
-    "start": {}
+    "migrate": {
+      "inputs": ["**/__migrations/*.ts"]
+    },
+    "migrate:undo": {
+      "cache": false
+    },
+    "seed": {
+      "inputs": ["**/__seeders/*.ts"]
+    },
+    "init:db": {
+      "dependsOn": ["migrate", "seed"]
+    },
+    "seed:undo": {
+      "cache": false
+    }
   }
 }

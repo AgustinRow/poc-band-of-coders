@@ -18,9 +18,9 @@
     "@project/config-typescript": "workspace:^",
     "@project/errors": "workspace:^",
     "@project/result": "workspace:^",
-    "libphonenumber-js": "^1.10.15",
-    "yup": "^0.32.11",
-    "yup-password": "^0.2.2"
+    "libphonenumber-js": "~1.10.15",
+    "yup": "~0.32.11",
+    "yup-password": "~0.2.2"
   },
   "devDependencies": {
     "@types/eslint": "^8",

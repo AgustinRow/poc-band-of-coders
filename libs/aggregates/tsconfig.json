@@ -13,5 +13,8 @@
     {
       "path": "../schema-validation"
     }
+  ],
+  "include": [
+    "src/**/*.ts"
   ]
 }

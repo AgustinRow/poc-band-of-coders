@@ -1,0 +1,7 @@
+.git
+**/dist
+dist
+*/dist
+**/node_modules
+docker-local
+.vscode

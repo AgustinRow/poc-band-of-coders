@@ -6,6 +6,6 @@ enum InvalidOperationErrorCodes {
 
 export default class InvalidOperationError extends BaseError<InvalidOperationErrorCodes> {
   constructor (message: string, originalError?: Error | unknown) {
-    super(InvalidOperationErrorCodes.INVALID_OPERATION_ERROR, message, originalError)
+    super(InvalidOperationErrorCodes.INVALID_OPERATION_ERROR, message, originalError, 403)
   }
 }
