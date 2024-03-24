@@ -11,6 +11,11 @@ Then in the root of the repo run `yarn turbo build`, this will install  the requ
 
 This is a POC of a booking CRUD system with an authentication method using a single code and API_KEY
 
+I use `Clean Architecture` for structure the project. Entities (inner circle) was not implemented. I reach until use cases:
+
+![Clean-Architecture graph](https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg)
+
+
 ### Tools
 
 It uses `turbo` for building all dependencies.
