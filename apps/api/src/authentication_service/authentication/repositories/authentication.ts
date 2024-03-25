@@ -9,6 +9,7 @@ import { Op } from 'sequelize'
 export class SequelizeAuthenticationSingleUseCodeRepository implements IAuthenticationSingleUseCodeRepository {
   async getSingleUseCode (singleUseCode: string): AsyncResult<IAuthSingleUseCode, UnknownError | NotFoundError> {
     try {
+      console.log('----------------------', singleUseCode)
       const authSingleUseCode = await AuthSingleUseCode.findOne({ where: { singleUseCode } })
       if (isNil(authSingleUseCode)) return err(new NotFoundError('Single use code not found'))
       return ok(authSingleUseCode)
