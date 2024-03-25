@@ -8,7 +8,7 @@ import './setup_express_routes'
 import './setup_listeners'
 import dependencies from './setup_module_dependencies'
 import applyRequestNamespace from './3rd_party/cls_namespaces/express_middleware'
-import storeAccessTokenInAuthHandler from './3rd_party/authentication/express_middleware'
+import storeAccessTokenInAuthHandler, { authenticationMiddleware } from './3rd_party/authentication/express_middleware'
 import { IDBBuilder } from './3rd_party/sequelize'
 import { PORT } from './constants_common'
 
@@ -27,6 +27,7 @@ import { PORT } from './constants_common'
 
   app.use(applyRequestNamespace)
   app.use(storeAccessTokenInAuthHandler)
+  app.use(authenticationMiddleware)
 
   const dependencyContainer = new Container({
     skipBaseClassChecks: true

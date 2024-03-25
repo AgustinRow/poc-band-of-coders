@@ -6,6 +6,7 @@ import UnknownError from '@project/errors/src/unknown_error'
 import NotFoundError from '@project/errors/src/not_found_error'
 import { InferTypesOnPropertySectionInputs } from './schema.validations'
 import InvalidInputError from '@project/errors/src/invalid_input_error'
+import AuthorizationError from '@project/errors/src/authorization_error'
 
 export default class PropertyControllers {
   constructor (
@@ -14,7 +15,7 @@ export default class PropertyControllers {
     abind(this)
   }
 
-  async createProperty (input: InferTypesOnPropertySectionInputs['createProperty']): AsyncResult<string, UnknownError | NotFoundError | InvalidInputError > {
+  async createProperty (input: InferTypesOnPropertySectionInputs['createProperty']): AsyncResult<string, UnknownError | NotFoundError | InvalidInputError | AuthorizationError > {
     const property = await this.propertyUseCases.createProperty(input)
     if (property.isErr()) return err(property.error)
     return ok(property.value)
@@ -24,7 +25,7 @@ export default class PropertyControllers {
     return await this.propertyUseCases.getAllProperties()
   }
 
-  async getById (input: InferTypesOnPropertySectionInputs['getById']): AsyncResult<string, UnknownError | NotFoundError> {
+  async getById (input: InferTypesOnPropertySectionInputs['getById']): AsyncResult<string, UnknownError | NotFoundError > {
     const property = await this.propertyUseCases.getById(input.id)
     if (property.isErr()) return err(property.error)
     return ok(property.value.id)

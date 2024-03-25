@@ -19,7 +19,7 @@ export default class PropertyPresenters {
     abind(this)
   }
 
-  async getById (id: string): AsyncResult<APIProperty, UnknownError | NotFoundError> {
+  async getById (id: string): AsyncResult<APIProperty, UnknownError | NotFoundError > {
     const property = await this.propertyUseCases.getById(id)
     if (property.isErr()) return err(property.error)
     const propertyAPI: APIProperty = {
@@ -31,7 +31,7 @@ export default class PropertyPresenters {
     return ok(propertyAPI)
   }
 
-  async getAllProperties (ids: string[]): AsyncResult<APIProperty[], UnknownError | NotFoundError> {
+  async getAllProperties (ids: string[]): AsyncResult<APIProperty[], UnknownError | NotFoundError > {
     const propertyAPI: APIProperty[] = []
     for (const propertyId of ids) {
       const property = await this.propertyUseCases.getById(propertyId)

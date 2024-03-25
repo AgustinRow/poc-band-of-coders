@@ -8,7 +8,7 @@
   },
   "include": [
     "src/**/*.ts",
-    "src/books_service/3rd_party/ingram_api",
+    "src/books_service/3rd_party/project_api",
   ],
   "exclude": [
     "./src/_migrator/*.js"
