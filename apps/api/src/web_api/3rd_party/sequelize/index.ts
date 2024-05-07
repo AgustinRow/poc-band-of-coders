@@ -10,9 +10,9 @@ import { AsyncResult, err, ok } from '@project/result/src'
 import UnknownError from '@project/errors/src/unknown_error'
 import SecretNotFoundError from '@project/errors/src/secret_not_found'
 import { startUpLog } from '~/utils/startup_log'
-import { fileURLToPath } from 'url'
 
 Sequelize.useCLS(sequelizeNamespace)
+import { fileURLToPath } from 'url'
 
 const dirname = fileURLToPath(new URL('.', import.meta.url))
 
